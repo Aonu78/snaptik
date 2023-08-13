@@ -56,8 +56,8 @@ export default function Home() {
         <iframe 
         width="100%" 
         height="700px" 
-        src="https://www.youtube.com/embed/PYJuIAsH8oE?autoplay=1&mute=1" 
-        title="Mostaza Argentina" 
+        src="https://www.youtube.com/embed/BlWzYWpq1zQ?autoplay=1&mute=1" 
+        title="Trial indoor de Chambéry" 
         frameBorder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowFullScreen></iframe>
