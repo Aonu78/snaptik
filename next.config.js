@@ -55,7 +55,7 @@ const nextConfig = {
       // 'in',
       // 'pr',
     ],
-    defaultLocale: 'vi',
+    defaultLocale: 'en',
     localeDetection: false,
   },
   trailingSlash: true,

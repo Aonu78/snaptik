@@ -1,4 +1,4 @@
-## SnapTik1Click Downloader
+## My-Tik-Taki Downloader
 
 ### Download video no limit from Tiktok without watermask
 
@@ -12,4 +12,4 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://mytiktaki.web.app/](https://mytiktaki.web.app/) with your browser to see the result.

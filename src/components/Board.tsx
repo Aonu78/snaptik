@@ -102,11 +102,19 @@ const Board = (props: Props) => {
           videoId = getIdVideo(link);
         }
         const url = process.env.NEXT_PUBLIC_DOWNLOAD_URL + videoId + '.mp4';
+        const url_play = process.env.NEXT_PUBLIC_DOWNLOAD_URL_play + videoId + '.mp4';
+        const url_wmplay = process.env.NEXT_PUBLIC_DOWNLOAD_URL_wmplay + videoId + '.mp4';
         const fileName = videoId + '.mp4';
+        const fileName1 = videoId + '.mp4';
+        const fileName2 = videoId + '.mp4';
         let blob = null;
+        let blob1 = null;
+        let blob2 = null;
         try {
           setLoading(true);
           blob = await getUrlRequest(url, setProcess);
+          blob1 = await getUrlRequest(url_play, setProcess);
+          blob2 = await getUrlRequest(url_wmplay, setProcess);
           setLoading(false);
         } catch (_) {
           setLoading(false);
@@ -119,6 +127,23 @@ const Board = (props: Props) => {
         document.body.appendChild(linkA);
         linkA.click();
         document.body.removeChild(linkA);
+        const l = document.createElement('br');
+
+        const linkB = document.createElement('a');
+        linkB.href = window.URL.createObjectURL(blob1 as any);
+        linkB.download = fileName;
+        document.body.appendChild(linkB);
+        linkB.click();
+        document.body.removeChild(linkB);
+        const lg = document.createElement('br');
+
+        const linkC = document.createElement('a');
+        linkC.href = window.URL.createObjectURL(blob2 as any);
+        linkC.download = fileName;
+        document.body.appendChild(linkC);
+        linkC.click();
+        document.body.removeChild(linkC);
+        const lgh = document.createElement('br');
       } else {
         setError('NOT_A_LINK_TIKTOK');
         setVideoInfo(null);
@@ -154,7 +179,7 @@ const Board = (props: Props) => {
   }, [videoInfo?.embed_product_id]);
 
   return (
-    <VStack py="20" bgGradient={bgGradient}>
+  <VStack py="20" bgGradient={bgGradient}>
       <Heading
         className={openSans.className}
         fontSize="6xl"
@@ -192,8 +217,8 @@ const Board = (props: Props) => {
           flexDirection={{
             md: 'row',
             base: 'column',
-          }}
-        >
+          }}>
+
           <InputGroup size="lg">
             <InputLeftElement>
               <MdLink color="gray.300" size="30px" />

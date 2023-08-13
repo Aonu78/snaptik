@@ -15,7 +15,7 @@ const Header = ({ title }: Props) => {
       <title>{title ?? trans.meta.title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="robots" content="index, follow" />
       <meta name="revisit-after" content="1 days" />
       <meta name="color-scheme" content="dark light" />
@@ -42,10 +42,10 @@ const Header = ({ title }: Props) => {
       <link rel="shortcut icon" href="/favicon.webp" />
       <meta name="google" content="notranslate" />
       <link rel="alternate" hrefLang="x-default" href={process.env.NEXT_PUBLIC_DOMAIN} />
-      <link rel="alternate" hrefLang="vi" href={`${process.env.NEXT_PUBLIC_DOMAIN}`} />
-      <link rel="alternate" hrefLang="en" href={`${process.env.NEXT_PUBLIC_DOMAIN}/en`} />
-      <link rel="alternate" hrefLang="in" href={`${process.env.NEXT_PUBLIC_DOMAIN}/in`} />
-      <link rel="alternate" hrefLang="br" href={`${process.env.NEXT_PUBLIC_DOMAIN}/br`} />
+      {/* <link rel="alternate" hrefLang="vi" href={`${process.env.NEXT_PUBLIC_DOMAIN}`} /> */}
+      <link rel="alternate" hrefLang="en" href={`${process.env.NEXT_PUBLIC_DOMAIN}/`} />
+      {/* <link rel="alternate" hrefLang="in" href={`${process.env.NEXT_PUBLIC_DOMAIN}/in`} />
+      <link rel="alternate" hrefLang="br" href={`${process.env.NEXT_PUBLIC_DOMAIN}/br`} /> */}
       {/* <link rel="alternate" hrefLang="ID" href={`${process.env.NEXT_PUBLIC_DOMAIN}/ID`} />
       <link rel="alternate" hrefLang="tr" href={`${process.env.NEXT_PUBLIC_DOMAIN}/tr`} />
       <link rel="alternate" hrefLang="fr" href={`${process.env.NEXT_PUBLIC_DOMAIN}/fr`} />
@@ -65,11 +65,11 @@ const Header = ({ title }: Props) => {
       <link rel="alternate" hrefLang="ro" href={`${process.env.NEXT_PUBLIC_DOMAIN}/ro`} />
       <link rel="alternate" hrefLang="el" href={`${process.env.NEXT_PUBLIC_DOMAIN}/el`} /> */}
       <link rel="canonical" href={`${process.env.NEXT_PUBLIC_DOMAIN}/${router.locale}`} />
-      <script
+      {/* <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1909271227447970"
         crossOrigin="anonymous"
-      ></script>
+      ></script> */}
     </Head>
   );
 };

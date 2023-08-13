@@ -6,6 +6,6 @@ type State = {
 };
 
 export const useThemeStore = create<State>((set) => ({
-  isDarkMode: false,
+  isDarkMode: true,
   toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
 }));

@@ -1,19 +1,11 @@
-import { LANGUAGES } from '@/contants';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import useTrans from '@/hooks/useTrans';
 import {
   Box,
-  Button,
   Flex,
   Heading,
   HStack,
   IconButton,
-  List,
-  ListItem,
-  Popover,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
   Text,
   useTheme,
   VStack,
@@ -37,10 +29,9 @@ const NavBar = (props: Props) => {
   const router = useRouter();
   const trans = useTrans();
 
-  return (
-    <VStack w="100%" backgroundColor={navBackgroundColor}>
+  return ( <VStack w="100%" backgroundColor={navBackgroundColor}>
       <HStack bg={navBackgroundColor} justifyContent="space-between" w="100%">
-        <Link href="/">
+        <Link href="/en/">
           <Box px="16px" display="flex" w="100%" py="10px">
             <Heading
               className={openSans.className}
@@ -55,7 +46,7 @@ const NavBar = (props: Props) => {
                 cursor: 'pointer',
               }}
             >
-              Snap
+              My-Tik-Taki
             </Heading>
             <Heading
               className={openSans.className}
@@ -66,7 +57,7 @@ const NavBar = (props: Props) => {
               fontWeight="bold"
               color={textColor}
             >
-              Tik1Click
+              {/* Tik1Click */}
             </Heading>
           </Box>
         </Link>
@@ -77,25 +68,25 @@ const NavBar = (props: Props) => {
               lg: 'flex',
             }}
           >
-            <Link href="/trending" locale={router.locale}>
+            <Link href="/en/trending" locale={router.locale}>
               <Text className={openSans.className} fontSize="md" color="red" fontWeight="600">
                 #Trending
               </Text>
             </Link>
             <Box w="20px" />
-            <Link href="/contact" locale={router.locale}>
+            <Link href="/en/contact" locale={router.locale}>
               <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
                 {trans.home.contact}
               </Text>
             </Link>
             <Box w="20px" />
-            <Link href="/terms-of-service" locale={router.locale}>
+            <Link href="/en/terms-of-service" locale={router.locale}>
               <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
                 {trans.home.terms}
               </Text>
             </Link>
             <Box w="20px" />
-            <Link href="/privacy-policy" locale={router.locale}>
+            <Link href="/en/privacy-policy" locale={router.locale}>
               <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
                 {trans.home.privacy}
               </Text>
@@ -115,47 +106,6 @@ const NavBar = (props: Props) => {
             variant="unstyled"
           />
           <Box w="16px" />
-          <Popover>
-            <PopoverTrigger>
-              <Button variant="unstyled">
-                <MdLanguage size="30px" color={textColor} />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent bg={navBackgroundColor} w="100%">
-              {/* <PopoverHeader>
-              <Text fontSize="md" fontWeight="bold" color={textColor}>
-              Languages
-              </Text>
-            </PopoverHeader> */}
-              <PopoverBody padding="0px">
-                <List>
-                  {LANGUAGES.map((item) => (
-                    <ListItem
-                      key={item.alias}
-                      _hover={{
-                        bg: isDarkMode ? 'background.main' : 'background.dark2',
-                      }}
-                    >
-                      <Link locale={item.alias} href={''}>
-                        <Text
-                          fontSize="md"
-                          fontWeight="600"
-                          color={textColor}
-                          py="8px"
-                          px="12px"
-                          _hover={{
-                            color: !isDarkMode ? 'primary.light' : 'primary.dark',
-                          }}
-                        >
-                          {item.name}
-                        </Text>
-                      </Link>
-                    </ListItem>
-                  ))}
-                </List>
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
           <Box w="16px" />
         </Box>
       </HStack>
@@ -167,7 +117,7 @@ const NavBar = (props: Props) => {
         pb="12px"
       >
         <Flex flex={0.3} justifyContent="center">
-          <Link href="/trending" locale={router.locale}>
+          <Link href="/en/trending" locale={router.locale}>
             <Text className={openSans.className} fontSize="md" color="red" fontWeight="700">
               #Trending
             </Text>
@@ -175,7 +125,7 @@ const NavBar = (props: Props) => {
         </Flex>
         <Box w="20px" />
         <Flex flex={0.3} justifyContent="center">
-          <Link href="/contact" locale={router.locale}>
+          <Link href="/en/contact" locale={router.locale}>
             <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
               {trans.home.contact}
             </Text>
@@ -183,7 +133,7 @@ const NavBar = (props: Props) => {
         </Flex>
         <Box w="20px" />
         <Flex flex={0.3} justifyContent="center">
-          <Link href="/terms-of-service" locale={router.locale}>
+          <Link href="/en/terms-of-service" locale={router.locale}>
             <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
               {trans.home.terms}
             </Text>
@@ -191,7 +141,7 @@ const NavBar = (props: Props) => {
         </Flex>
         <Box w="20px" />
         <Flex flex={0.3} justifyContent="center">
-          <Link href="/privacy-policy" locale={router.locale}>
+          <Link href="/en/privacy-policy" locale={router.locale}>
             <Text className={openSans.className} fontSize="sm" color={textColor} fontWeight="600">
               {trans.home.privacy}
             </Text>
